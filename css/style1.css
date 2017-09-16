@@ -1,0 +1,203 @@
+html,body {
+    width:100%;
+    min-height: 100vh;
+    margin:0;
+    padding:0;
+    overflow-x: hidden;
+    background-color: #F8EEE7;
+   
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size:14px;
+    line-height:24px;
+    color:#6f6f6f;
+    position: relative ;
+}
+
+.myCard{
+    margin-bottom: 20px;
+    border-radius: 25px;
+    padding-left: 15px;
+    padding-right: 15px; 
+    border: 2px solid black;
+    height: auto; 
+}
+.bookStyle{
+     background: url(../images/books.jpg) no-repeat center center;
+       background-size: cover; 
+    background-attachment: scroll;
+}
+
+.houseStyle
+{
+     background: url(../images/houses.jpg) no-repeat center center;
+       background-size: cover; 
+    background-attachment: scroll;
+}
+.charStyle{
+     background: url(../images/chars4.jpg) no-repeat center center;
+       background-size: cover; 
+    background-attachment: scroll;
+}
+.header{
+    position:fixed;  
+    height:15vh;
+ 
+    width:100%;
+    text-align: center;
+    background-color: #49274A;
+    color: white;
+    padding: 2vh 0 2vh 0;
+    top:0px;
+    border-bottom :7px solid white;
+    z-index: 2;
+
+}
+
+.btn-glyphicon { 
+    padding:8px ; 
+     margin-right: 3px;
+    background:#ffffff; 
+
+}
+.icon-btn 
+{ 
+    padding: 10px 10px 10px 10px;
+    border-radius: 50px; 
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+.section{
+    width:80%;
+    margin:40vh auto 10vh auto;
+}
+.filter-section{
+    width:80%;
+    margin:24vh auto 10vh auto;
+    position: fixed;
+    top:0;
+    left: 10%;
+    background-color: #F4DECB ;
+    z-index: 2;
+    border:1px solid white;
+    border-radius: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.buttonStyle{
+    position: fixed;
+    height: auto;
+    background-color: #001933;
+    border: 2px solid black;
+    border-radius: 25px;
+    top: 0;
+    width: 84%;
+    margin: 20vh auto 20px auto;
+    left: 8%;
+    border:2px solid #94618E;
+    text-align: center;
+}
+.buttonStyle1{
+    height: auto;
+    background-color: #001933;
+    border: 2px solid black;
+    border-radius: 50px
+    width: 84%;
+    margin: 20vh auto 20px auto;
+}
+.navbar-fixed-top{
+  top:15vh;
+ }
+.navbar{
+  border:2px solid #94618E;
+  border-radius:25px;
+  background-color: #94618E;
+  margin-bottom: 15px;  
+}
+
+
+h2 span { 
+   color: white; 
+   font:  24px/45px Helvetica, Sans-Serif; 
+   letter-spacing: -1px;  
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+   padding: 5px; 
+}
+
+
+li{
+    color: #6f6f6f;
+}
+
+a:active,
+ :focus,
+ :hover{
+    outline:none;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+.detail-section-book
+{
+    margin-top: 15vh;
+    background-image: url(../images/bookbg.jpg);
+  background-size: cover;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+    z-index: 1;
+}
+.detail-section-house
+{
+    margin-top: 15vh;
+    background-image: url(../images/housebg.jpg);
+  background-size: cover;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+    z-index: 1;
+}
+.detail-section-char
+{
+    margin-top: 15vh;
+    background-image: url(../images/charbg.jpg);
+  background-size: cover;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+    z-index: 1;
+}
+
+
+.content {
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 3px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  margin-top: 40px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 50px;
+  z-index: 2;
+  padding: 40px 30px 50px 30px;
+  color: white;
+ }
+

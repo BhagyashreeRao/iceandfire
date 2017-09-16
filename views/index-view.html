@@ -1,0 +1,140 @@
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+       
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+
+          <ul class="nav navbar-nav navbar-right">
+            <li ng-class="{'active':show=='showAll'}" class="btn icon-btn btn-primary" ng-click="getData.show='showAll'" ng-init="show='showAll'"><span class="icon-crown glyphicon btn-glyphicon img-circle text-primary"></span>All</li>
+
+            <li  ng-class="{'active':show=='showBooks'}" class="btn icon-btn btn-warning" ng-click="getData.show='showBooks'" ><span class="icon-book-open glyphicon btn-glyphicon img-circle text-warning">
+            </span>Books</li>
+
+            <li ng-class="{'active':show=='showHouses'}" class="btn icon-btn btn-success" ng-click="getData.show='showHouses'"> <span class="icon-group glyphicon btn-glyphicon glyphicon-group img-circle text-success"></span>Houses</li>
+
+            <li ng-class="{'active':show=='showChars'}" class="btn icon-btn btn-danger" ng-click="getData.show='showChars'" ><span class="icon-theatre glyphicon btn-glyphicon glyphicon-theater img-circle text-danger"></span>Characters </li>
+
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+<div class="container filter-section ">
+<div class="row" style="text-align: center;">
+    <div class="col-lg-4 col-md-4 col-sm-6"> 
+        <span class="glyphicon btn-glyphicon glyphicon-search img-circle"></span> Filter : 
+        <span>
+            <select ng-model="filter"></p>
+                <option value="all" selected ng-click="getData.show='showAll'">All</option>
+                <option value="books" ng-click="getData.show='showBooks'">Books</option>
+                <option value="houses" ng-click="getData.show='showHouses'">Houses</option>
+                <option value="characters" ng-click="getData.show='showChars'">Characters</option>
+              </select>   
+              </span>
+        </div>
+
+         <div class="col-lg-4 col-md-4 col-sm-6 ">
+                <div ng-if="filter=='all'">
+                <div ng-init="getData.show='showAll'">    
+                <input ng-model="getData.q" id="search" class="form-control" placeholder="Enter name of book, house or character">
+                </div>
+                </div>
+
+                <div ng-if="filter=='books'">
+                <div ng-init="getData.show='showBooks'">    
+                <input ng-model="getData.q" id="search" class="form-control" placeholder="Enter name or author of book">
+                </div>
+                </div>
+
+
+                <div ng-if="filter=='houses'">
+                <div ng-init="getData.show='showHouses'">    
+                <input ng-model="getData.q" id="search" class="form-control" placeholder="Enter name or region of the house">
+                </div>
+                </div>
+
+                <div ng-if="filter=='characters'">
+                <div ng-init="getData.show='showChars'">    
+                <input ng-model="getData.q" id="search" class="form-control" placeholder="Enter name or alias of the character">
+                </div>
+                </div>
+          </div>
+
+           <div class="col-lg-4 col-md-4 col-sm-12 ">
+           <span class="glyphicon glyphicon glyphicon-sort btn-glyphicon img-circle"></span> Sort in : 
+            <span>
+            <select ng-model="sort"></p>
+                <option value="name" selected>Ascending</option>
+                <option value="-name">Descending</option>
+            </select>   
+              </span>
+           </div>
+                
+
+</div>
+</div>
+
+<div class="container section" ng-init="sort='name'">
+<div ng-repeat=" data in getData.getData1()  | orderBy: sort |  filter: getData.q | startFrom:getData.currentPage*getData.pageSize | limitTo:getData.pageSize" >
+
+    <div ng-if='show=="showAll"'>
+
+        <div ng-if='data.url.search("books") != -1'>
+        <book-card> </book-card>
+        </div>
+        <div ng-if='data.url.search("houses") != -1'>
+        <house-card> </house-card>
+        </div>
+        <div ng-if='data.url.search("characters") != -1'>
+        <char-card> </char-card>
+        </div>
+    </div>
+
+    <div ng-if='show=="showBooks"'>
+        <div ng-if='data.url.search("books") != -1'>
+        <book-card> </book-card>
+        </div>
+    </div>
+
+    <div ng-if='show=="showHouses"'>
+        <div ng-if='data.url.search("houses") != -1'>
+        <house-card> </house-card>
+        </div>
+    </div>
+
+    <div ng-if='show=="showChars"'>
+        <div ng-if='data.url.search("characters") != -1'>
+        <char-card> </char-card>
+        </div>
+    </div>
+</div>
+<center>
+    <button ng-disabled="getData.currentPage == 0" ng-click="getData.currentPage=getData.currentPage-1">
+        Previous
+    </button>
+        {{getData.currentPage+1}}/{{getData.numberOfPages()}}
+    <button ng-disabled="getData.currentPage >= getData.allData.length/getData.pageSize - 1" ng-click="getData.currentPage=getData.currentPage+1">
+        Next
+    </button>
+
+    </center>
+ <center>   <span> Select page size <select ng-model="getData.pageSize" id="pageSize" class="form-control">
+        <option value="20">20</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+        <option value="150">150</option>
+     </select>
+     </span>
+     </center>
+    </div>
+    </div>
+

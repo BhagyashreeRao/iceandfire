@@ -1,0 +1,12 @@
+<div class="myCard bookStyle" ng-click="getData.getUrl(data.url)" >
+<h2 style="float:right" ><span>	category: Books</span></h2>	
+<a href="#/details/{{getData.category}}/{{getData.value}}">
+	
+	    <h2><span>
+	      #{{$index+1}} Book name: {{data.name}}</span>
+	    </h2>
+	    <h2><span>Author: </span><span ng-repeat="author in data.authors">
+	     {{author}} </span> </h2>
+</a>
+<br/>
+</div>

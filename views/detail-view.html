@@ -1,0 +1,180 @@
+<div ng-init="currentData.loadDetails()">
+
+	<div ng-if='currentData.category=="books"'>
+    <div class="container detail-section-book" style="width: 100vw;">
+	<div class="content ">
+
+		<h2>Book Name : {{currentData.data.name}}</h2>
+		<p>isbn : {{currentData.data.isbn}}</p>
+		<p>Author: 
+		<span ng-repeat="author in currentData.data.authors">
+	        {{author}}  </span></p>
+		<p>Number of pages : {{currentData.data.numberOfPages}}</p>
+		<span ng-if="currentData.data.numberOfPages==''">
+		-
+		</span>
+		<p>publisher : {{currentData.data.publisher}}
+		<span ng-if="currentData.data.publisher==''">NA</span>
+		</p>
+		<p>country : {{currentData.data.country}}
+		<span ng-if="currentData.data.country==''">NA</span>
+		</p>
+		<p>media type : {{currentData.data.mediaType}}
+		<span ng-if="currentData.data.mediaType==''">NA</span>
+		</p>
+		<p>Released : {{currentData.data.released}}
+		<span ng-if="currentData.data.released==''">NA</span>
+		</p> 
+
+		<div ng-if="currentData.povNames.length>0">
+		<b>PoV Characters:</b>
+		<span ng-repeat="povName in currentData.povNames" style="margin-left: 20px">
+		 {{povName}}<br>
+		 </span>
+		
+		 </div>
+
+		<div ng-if="currentData.povNames.length==0 ">
+		<p>PoV Characters : NA </p>
+		</div>
+
+		<div ng-if="currentData.charNames.length>0">
+		<b>Other Characters: </b>
+
+		<div ng-repeat="charName in currentData.charNames track by $index">
+		<span ng-if="charName!=''" style="margin-left: 20px"> {{charName}} <br></span>
+		</div>
+
+		</div>
+
+		<div ng-if="currentData.charNames.length==0">
+		<p>Other Characters : NA </p>
+		</div>
+
+
+		</div>
+		  <br>
+		 <ul class="pager">
+                    <li class="next">
+                        <a href="#/">&larr; Back to Home </a>
+                    </li>
+                </ul>
+                <br>
+              
+	</div>
+	</div>
+
+
+<div ng-if='currentData.category=="characters"'>
+<div class="container detail-section-char" style="width: 100vw;">
+	<div class="content ">
+
+	<div ng-if="currentData.data.name!=''"><h2>Name: {{currentData.data.name}}</h2></div>
+	<div ng-if="currentData.data.name==''"><p>Name: NA</p></div> 
+<p ng-if="currentData.data.gender!=''">Gender: {{currentData.data.gender}}</p>
+<p ng-if="currentData.data.culture!=''">Culture: {{currentData.data.culture}}</p>
+<p ng-if="currentData.data.born!=''">Born: {{currentData.data.born}}</p>
+<p ng-if="currentData.data.died!=''">Died: {{currentData.data.died}}</p>
+<div ng-if='currentData.data.titles[0]!=""' >
+<b>Title</b>: <span ng-repeat="title in currentData.data.titles">{{title}}<br></span>
+</div>
+
+<div ng-if="currentData.data.aliases[0]!='' ">
+<b>Aliases</b> : <span ng-repeat="alias in currentData.data.aliases" >{{alias}} <br></span>
+
+</div>
+
+<p ng-if="currentData.data.father!=''">Father: {{currentData.data.father}}</p>
+<p ng-if="currentData.data.mother!=''">Mother: {{currentData.data.mother}}</p>
+<p ng-if="currentData.data.spouse!=''">Spouse: {{currentData.data.spouse}}</p>
+<div ng-if="currentData.allegiances.length>0">
+<b>Allegiances:</b> <span ng-repeat="allegiance in currentData.allegiances" >{{allegiance}} <br></span>
+
+</div>
+
+<div ng-if="currentData.allegiances[0] == ''">
+<p>Allegiances : NA </p>
+</div>
+<div ng-if="currentData.povBookNames.length>0">
+<b>PoV Books:</b> <span ng-repeat="povBook in currentData.povBookNames">{{povBook}}<br> </span>
+
+</div>
+
+<div ng-if="currentData.povBookNames.length==0">
+<p>PoV Books : NA </p>
+</div>
+
+<div ng-if="currentData.bookNames.length>0">
+<b>Books:</b> <span ng-repeat="book in currentData.bookNames">{{book}}<br> </p>
+</div>
+
+<div ng-if="currentData.bookNames.length==0">
+<p>Books : NA </p>
+</div>
+
+<div ng-if="currentData.data.tvSeries[0] != ''">
+<b>T.V. series: </b><span ng-repeat="atvSeries in currentData.data.tvSeries">{{atvSeries}}<br> </span>
+<br>
+</div>
+
+
+
+<div ng-if="currentData.data.playedBy[0]!=''">
+<b>Played By :</b> <span ng-repeat="playedByOne in currentData.data.playedBy">{{playedByOne}} </span>
+<br>
+</div>
+
+
+</div>
+				 <br>
+                <ul class="pager">
+                    <li class="next">
+                        <a href="#/">&larr; Back to Home </a>
+                    </li>
+                </ul>
+                <br>
+
+
+
+</div>
+</div>
+
+<div ng-if='currentData.category=="houses"'>
+    <div class="container detail-section-house" style="width: 100vw;">
+	<div class="content ">
+
+	<h2>House name : {{currentData.data.name}}</h2>
+	<p ng-if="currentData.data.region!=''">Region : {{currentData.data.region}}</p>
+	<p ng-if="currentData.data.coatOfArms!=''">Coat of Arms : {{currentData.data.coatOfArms}}</p>
+	<p ng-if="currentData.data.words!=''">Words : {{currentData.data.words}}</p>
+	<div ng-if="currentData.data.titles[0]!=''"><b>Title :</b> <span ng-repeat="title in currentData.data.titles" style="margin-left: 20px">{{title}} </span></div>
+	<p ng-if="currentData.data.seats[0]!=''"><b>Seats:</b><span ng-repeat="seat in currentData.data.seats" style="margin-left: 20px">{{seat}}</span></p>
+	<p ng-if="currentData.data.currentLord!=''">Current Lord : {{currentData.currentLord}}</p>
+	<p ng-if="currentData.data.overlord!=''"> overLord : {{currentData.overLord}}</p>
+	<p ng-if="currentData.data.heir!=''">Heir : {{currentData.heir}}</p>
+	<p ng-if="currentData.data.founded !=''">Founded : {{currentData.data.founded}}</p>
+	<p ng-if="currentData.data.founder!=''"> Founder :{{currentData.founder}}</p>
+	<p ng-if="currentData.data.diedOut!=''"> Died out : {{currentData.data.diedOut}}</p>
+	<div ng-if="currentData.data.ancestralWeapons[0]!=''">
+	<b>Ancestral weapon :</b> <span ng-repeat="ancestralWeapon in currentData.data.ancestralWeapons" style="margin-left: 20px">{{ancestralWeapon}}<br></span>
+	</div>
+	<div ng-if="currentData.cadetBranchNames.length > 0">
+	<b>Cadet branch :</b> <span ng-repeat="cadetBranch in currentData.cadetBranchNames" style="margin-left: 20px">{{cadetBranch}}<br></span>
+	</div>
+	<div ng-if="currentData.swornMemberNames.length > 0">
+	<b>Sworn members :</b> <span ng-repeat="swornMember in currentData.swornMemberNames" style="margin-left: 20px">{{swornMember}}<br></span>
+	</div>
+</div>
+	<br>
+   <ul class="pager">
+                    <li class="next">
+                        <a href="#/">&larr; Back to Home </a>
+                    </li>
+                </ul>
+        <br>
+   
+
+</div>
+</div>
+             
+</div>

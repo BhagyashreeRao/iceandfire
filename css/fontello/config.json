@@ -1,0 +1,52 @@
+{
+  "name": "",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "dc73bee1d58539abe8c96b958bf4c931",
+      "css": "fire",
+      "code": 59392,
+      "src": "elusive"
+    },
+    {
+      "uid": "56f2eac13d2b397ff4a54dc38f783b95",
+      "css": "snowflake-o",
+      "code": 62172,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "dplw5xo88mzzr7b45nvjcamyyhni6drs",
+      "css": "book",
+      "code": 59393,
+      "src": "modernpics"
+    },
+    {
+      "uid": "8fc56819afcd07e2786e34f18d39b71b",
+      "css": "book-open",
+      "code": 59394,
+      "src": "iconic"
+    },
+    {
+      "uid": "5f89d009e91c94c7c9be2f8711d7a2eb",
+      "css": "theatre",
+      "code": 59450,
+      "src": "maki"
+    },
+    {
+      "uid": "e36d581e4f2844db345bddc205d15dda",
+      "css": "group",
+      "code": 59395,
+      "src": "elusive"
+    },
+    {
+      "uid": "186dec7a13156bbe2550790c158fb85d",
+      "css": "crown",
+      "code": 59460,
+      "src": "fontelico"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+<div class="myCard charStyle" ng-click="getData.getUrl(data.url)"  >
+<h2 style="float:right"><span>	category: Characters</span></h2>	
+<a ng-href="#/details/{{getData.category}}/{{getData.value}}"  >
+
+		<h2 ng-if="data.name!=''"><span> #{{$index+1}} Name: {{data.name}}</span></h2>
+		<h2 ng-if="data.name==''"><span>#{{$index+1}} Name: NA</span></h2> 
+	<h2 ng-if="data.aliases!=''"><span> Aliases : </span><span ng-repeat="alias in data.aliases">{{alias}} </span></h2>
+	</a>	
+</div>
